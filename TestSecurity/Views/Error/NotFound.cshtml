@@ -1,0 +1,9 @@
+﻿@model TestSecurity.Models.NotFoundModel
+@{
+    ViewBag.Title = "Page could not be found";
+}
+<h2 style="max-width: 410px;">@ViewBag.Title</h2>
+<div>
+    You tried to visit '@Model.RequestedUrl' which cannot be found.
+</div>
+

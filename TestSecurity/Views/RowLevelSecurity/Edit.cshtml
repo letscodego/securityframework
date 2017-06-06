@@ -1,0 +1,58 @@
+﻿@model Security.Identity.PrincipalRowFilterViewModel
+@{
+    ViewBag.Title = "Edit RLS";
+}
+<h2>Edit RLS</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.Id)
+    <div class="form-horizontal">
+        <h4>Row Filter</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedPrincipalId, new { @class = "control-label col-md-2" })
+            <div class="col-sm-2">
+                @Html.DropDownListFor(model => model.SelectedPrincipalId, Model.PrincipalList, "--Select--", new { @class = "form-control required" })
+                @Html.RadioButtonFor(m => m.PrincipalType, "G") Group
+                @Html.RadioButtonFor(m => m.PrincipalType, "U") User
+            </div>
+            <div>
+                @Html.ValidationMessageFor(m => m.PrincipalName)
+            </div>
+        </div>
+        <div class="editor-field" style="padding-bottom: 15px;">
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SelectedRowFilterTypeId, new { @class = "control-label col-md-2" })
+            <div class="col-sm-2">
+                @Html.DropDownListFor(model => model.SelectedRowFilterTypeId, Model.RowFilterTypeList, "--Select--", new { @class = "form-control required" })
+            </div>
+            <div>
+                @Html.ValidationMessageFor(m => m.RowFilterTypeName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.RowFilterValue, new { @class = "control-label col-md-2" })
+            <div class="col-md-2">
+                @Html.TextBoxFor(model => model.RowFilterValue, new { @class = "form-control required" })
+                @Html.ValidationMessageFor(model => model.RowFilterValue)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

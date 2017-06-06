@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArrayOfArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\testsecurity\startup.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\testsecurity\web.config</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\security\identity\identityconfig.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\security\claim\claimsmanager.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\security\properties\assemblyinfo.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\testsecurity\controllers\accountcontroller.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\testsecurity\views\home\contact.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\testsecurity\views\claimsadmin\create.cshtml</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>e:\tfs-srv\infra\src\security\security\identity\adminviewmodel.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>E:\tfs-srv\Infra\src\Security\Security\Identity\ApplicationGroupStore.cs</string>
+    </ArrayOfString>
+  </ArrayOfArrayOfString>
+</ArrayOfArrayOfArrayOfString>

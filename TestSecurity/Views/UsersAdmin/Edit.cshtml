@@ -1,0 +1,84 @@
+﻿@model Security.Identity.EditUserViewModel
+@{
+    ViewBag.Title = "Edit User";
+}
+
+<h2>Edit User</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Edit User Form.</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Id)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    @Html.CheckBoxFor(m => m.IsActiveDirectoryUser)
+                    @Html.LabelFor(m => m.IsActiveDirectoryUser)
+                </div>
+            </div>
+        </div>
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.IsActiveDirectoryUser, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.IsActiveDirectoryUser, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.IsActiveDirectoryUser)
+                </div>
+            </div>*@
+        <div class="form-group">
+            @Html.Label("This User belongs to the following Groups", new { @class = "control-label col-md-2" })
+            <span class="col-md-10">
+                @{ var currentIndex = 0;}
+                @foreach (var item in Model.GroupsList)
+                {
+                    var currentId = "groupCb" + currentIndex;
+                    <div>
+                        <input id="@currentId" type="checkbox" name="selectedGroups" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />
+                        @Html.Label(item.Text, new { @class = "control-label", @for = currentId, style = "cursor:pointer;" })
+                    </div>
+                    currentIndex++;
+                }
+            </span>
+        </div>
+        <div class="form-group">
+            @Html.Label("This User belongs to the following Claims", new { @class = "control-label col-md-2" })
+            <span class="col-md-10">
+                @{ currentIndex = 0;}
+                @foreach (var item in Model.ClaimsList)
+                {
+                    var currentId = "claimCb" + currentIndex;
+                    <div>
+                        <input id="@currentId" type="checkbox" name="selectedClaims" value="@item.Value" checked="@item.Selected" class="checkbox-inline" />
+                        @Html.Label(item.Text, new { @class = "control-label", @for = currentId, style = "cursor:pointer;" })
+                    </div>
+                    currentIndex++;
+                }
+            </span>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+                <a href="#">@Html.ActionLink("Reset Password","ResetPassword", "Account", null, new { @class = "btn btn-success" })</a>
+            </div>
+        </div>
+    </div>
+                    }
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,68 @@
+﻿@model Security.Identity.ApplicationUser
+@{
+    ViewBag.Title = "User Details";
+}
+<h2>User Details</h2>
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+    </dl>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActiveDirectoryUser)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsActiveDirectoryUser)
+        </dd>
+    </dl>
+</div>
+
+<h4>List of Groups this user belongs to:</h4>
+@if (ViewBag.GroupNames.Count == 0)
+{
+    <hr />
+    <p>No Groups found for this user.</p>
+}
+
+<table class="table">
+    @foreach (var item in ViewBag.GroupNames)
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+
+</table>
+
+<h4>List of Claims this user belongs to:</h4>
+@if (ViewBag.ClaimNames.Count == 0)
+{
+    <hr />
+    <p>No Claim found for this user.</p>
+}
+
+<table class="table">
+    @foreach (var item in ViewBag.ClaimNames)
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

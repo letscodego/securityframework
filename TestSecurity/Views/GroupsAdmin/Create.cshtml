@@ -1,0 +1,72 @@
+﻿@model Security.Identity.ApplicationGroup
+@{
+    ViewBag.Title = "Create Group";
+}
+
+<h2>Create Group</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>ApplicationGroup</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+        </div>
+        @*<div class="form-group">
+                <label class="col-md-2 control-label">
+                    Select Group Roles
+                </label>
+                <div class="col-md-10">
+                    @foreach (var item in (SelectList)ViewBag.RolesList)
+                    {
+                        <div>
+                            <input type="checkbox" name="selectedRoleIds" value="@item.Value" class="checkbox-inline" />
+                            @Html.Label(item.Text, new { @class = "control-label" })
+                        </div>
+                    }
+                </div>
+            </div>*@
+        <div class="form-group">
+            <label class="col-md-2 control-label">
+                Select Group Claims
+            </label>
+            <div class="col-md-10">
+                @{ var currentIndex = 0;}
+                @foreach (var item in (SelectList)ViewBag.ClaimsList)
+                {
+                    var currentId = "claimCb" + currentIndex;
+                    <div>
+                        <input id="@currentId" type="checkbox" name="selectedClaimIds" value="@item.Value" class="checkbox-inline" />
+                        @Html.Label(item.Text, new { @class = "control-label", @for = currentId, style = "cursor:pointer;" })
+                    </div>
+                    currentIndex++;
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+                    }
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

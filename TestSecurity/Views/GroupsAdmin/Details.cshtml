@@ -1,0 +1,65 @@
+﻿@model Security.Identity.ApplicationGroup
+@{
+    ViewBag.Title = "Group Details";
+}
+
+<h2>Group Details</h2>
+<div>
+    <h4>ApplicationGroup</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+
+@*<h4>List of roles granted this group</h4>
+@if (ViewBag.RolesCount == 0)
+{
+    <hr />
+    <p>No role found in this group.</p>
+}
+
+<table class="table">
+    @foreach (var item in ViewBag.RolesList)
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+</table>*@
+<h4>List of claims granted this group</h4>
+@if (ViewBag.ClaimsCount == 0)
+{
+    <hr />
+    <p>No claim found in this group.</p>
+}
+
+<table class="table">
+    @foreach (var item in ViewBag.ClaimsList)
+    {
+        <tr>
+            <td>
+                @item
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+
+</p>
