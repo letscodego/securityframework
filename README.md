@@ -9,6 +9,8 @@ ReadMe will be more informative asap!
 
 For using this framework you have to change in code "domainname" to your domain also "user@test.com" to your desire username.
 
+To find out DB objects run Security.dacpac file in DB Script folder to get database objects script.
+
 Links those helped me to develop this framework are:
 
 http://bitoftech.net/2015/03/31/asp-net-web-api-claims-authorization-with-asp-net-identity-2-1/
