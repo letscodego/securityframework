@@ -19,6 +19,8 @@ https://dotnetcodr.com/2013/02/11/introduction-to-claims-based-security-in-net4-
 
 http://www.mytechnotes.me/ (hacked by someone and deleted all useful posts)
 
+https://www.scottbrady91.com/ASPNET-Identity/Identity-Manager-using-ASPNET-Identity
+
 http://benfoster.io/blog/asp-net-identity-role-claims
 
 https://msdn.microsoft.com/en-gb/library/ff359101.aspx
