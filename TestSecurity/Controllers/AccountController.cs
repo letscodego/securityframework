@@ -72,6 +72,13 @@ namespace TestSecurity.Controllers
                 return View(model);
             }
 
+            //var myUser = UserManager.Users.FirstOrDefault(u => u.UserName == model.Email.GetLogin() ||
+            //                                                    u.Email == model.Email);
+            //if (myUser != null)
+            //{
+            //   
+            //}
+
             if (!model.Email.Contains("@"))
             {
                 ContextType authenticationType = ContextType.Domain;
