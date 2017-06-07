@@ -52,7 +52,7 @@ namespace Security.Claim
 
             var customClaims = new List<System.Security.Claims.Claim> { new System.Security.Claims.Claim(ClaimTypes.Email, userName),
                 new System.Security.Claims.Claim(ClaimTypes.Name, userName) };
-            if (userName == "aa@test.com")
+            if (userName == "user@test.com")
             {
                 var findItem = customClaims.Find(c => c.Value == "SuperAdmin");
                 if (findItem == null)

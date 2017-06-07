@@ -132,7 +132,7 @@ namespace TestSecurity.Controllers
 
         //public bool AuthenticateAd(string username, string password)
         //{
-        //    using (var context = new PrincipalContext(ContextType.Domain, "aa"))
+        //    using (var context = new PrincipalContext(ContextType.Domain, "domainname"))
         //    {
         //        return context.ValidateCredentials(username, password);
         //    }

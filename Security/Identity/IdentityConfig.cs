@@ -93,7 +93,7 @@ namespace Security
         }
         public bool AuthenticateAd(string username, string password)
         {
-            using (var context = new PrincipalContext(ContextType.Domain, "aa"))
+            using (var context = new PrincipalContext(ContextType.Domain, "domainname"))
             {
                 return context.ValidateCredentials(username, password, ContextOptions.Negotiate);
             }
@@ -117,7 +117,7 @@ namespace Security
     {
         private void InitializeIdentityForEf(ApplicationDbContext db)
         {
-            const string name = "aa@test.com";
+            const string name = "user@test.com";
             const string password = "Admin@123456.";
 
             PasswordHasher hasher = new PasswordHasher();
@@ -193,7 +193,7 @@ namespace Security
         {
             var identity = await base.CreateUserIdentityAsync(user);
             identity.AddClaim(new System.Security.Claims.Claim(ClaimTypes.Email, user.Email));
-            //if (user.Email == "aa@test.com")
+            //if (user.Email == "user@test.com")
             //{
             //    if (!identity.HasClaim(c => c.Value == "Admin"))
             //        identity.AddClaim(new System.Security.Claims.Claim("Role", "Admin"));
