@@ -5,8 +5,6 @@ A framework for asp.net mvc projects with group, claim and user manager plus row
 
 It can authenticate user by domain.   
 
-ReadMe will be more informative asap!
-
 For using this framework you have to change in code "domainname" to your domain also "user@test.com" to your desire username.
 
 To find out DB objects run Security.dacpac file in DB Script folder to get database objects script.
@@ -27,3 +25,4 @@ https://msdn.microsoft.com/en-gb/library/ff359101.aspx
 
 http://johnatten.com/2014/08/10/asp-net-identity-2-0-implementing-group-based-permissions-management/
 
+ReadMe will be more informative asap!
