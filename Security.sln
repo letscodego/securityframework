@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Securi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSecurity", "TestSecurity\TestSecurity.csproj", "{BB7FC115-AE51-4D69-99D6-EA63650159D6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB Script", "DB Script", "{D7B339B1-E2A3-44E9-BBE4-D675D2C972A9}"
+	ProjectSection(SolutionItems) = preProject
+		DB Script\Security.dacpac = DB Script\Security.dacpac
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,17 +29,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs-srv:8080/tfs/bosscollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Security\\Security.csproj
-		SccProjectName1 = Security
-		SccLocalPath1 = Security
-		SccProjectUniqueName2 = TestSecurity\\TestSecurity.csproj
-		SccProjectName2 = TestSecurity
-		SccLocalPath2 = TestSecurity
 	EndGlobalSection
 EndGlobal
