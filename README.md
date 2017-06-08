@@ -1,5 +1,5 @@
 # Security Framework
-A .net claim based security framework (C#, Asp.net MVC, SQL Server)
+A .net claims based security framework (C#, Asp.net MVC, SQL Server)
 
 A framework for asp.net mvc projects with group, claim and user manager plus row level security.
 
